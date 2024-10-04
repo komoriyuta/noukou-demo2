@@ -5,15 +5,17 @@ import { getGeminiResponse } from '../components/actions'
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Label } from "@/components/ui/label"
+
+interface GeminiResponse {
+  intermediateText: string;
+  explanation: string;
+}
 
 export default function Home() {
   const [text1, setText1] = useState('')
   const [text2, setText2] = useState('')
-  const [result, setResult] = useState<any>(null)
+  const [result, setResult] = useState<GeminiResponse|null>(null)
   const [isLoading, setIsLoading] = useState(false)
-  const [mode, setMode] = useState<'compare' | 'intermediate'>('compare')
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()

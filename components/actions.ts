@@ -1,6 +1,6 @@
 'use server'
 
-import { GoogleGenerativeAI,SchemaType} from "@google/generative-ai";
+import { GoogleGenerativeAI} from "@google/generative-ai";
 
 const API_KEY = process.env.GEMINI_API_KEY;
 const genAI = new GoogleGenerativeAI(API_KEY!);
@@ -13,8 +13,7 @@ export async function getGeminiResponse(text1: string, text2: string) {
                                                 responseMimeType: "application/json",
                                               },
                                             });
-    let prompt;
-    prompt = `ふたつの文章が入力されます。この2つの文章の意味について考え、意味の空間の中で中点に存在するであろう文章を生成してください。元の文章について、その意味のみを抽出し、出力結果にはその文字づらがもれることのないようにしてください。できるだけ具体的に出力してください。Provide the output in JSON format with the following structure:
+    const prompt = `ふたつの文章が入力されます。この2つの文章の意味について考え、意味の空間の中で中点に存在するであろう文章を生成してください。元の文章について、その意味のみを抽出し、出力結果にはその文字づらがもれることのないようにしてください。できるだけ具体的に出力してください。Provide the output in JSON format with the following structure:
     {
       "explanation": "思考過程をこの要素の中に記述してください。それぞれの意味を解釈したあと、ステップバイステップで中間の適切な文章を生成するようにしてください。"
       "intermediateText": "生成された中間の文章",
