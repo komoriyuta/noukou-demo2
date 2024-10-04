@@ -1,5 +1,5 @@
-#　Geminiを使った中間の文章生成
+#   Geminiを使った中間の文章生成
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
-    クローンして、npm runでサーバーを建てる
+クローンして、npm runでサーバーを建てる
