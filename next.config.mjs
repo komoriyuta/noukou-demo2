@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
         distDir:'build',
-        assetPrefix: '/noukou-demo',
+        output: 'standalone',
+        assetPrefix: '/noukou-demo'
 };
 
 export default nextConfig;
